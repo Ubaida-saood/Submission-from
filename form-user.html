@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submition Form</title>
+    <style>
+        p {
+            border: 1px solid black;
+            width: 330px;
+            padding: 2px;
+        }
+
+        body {
+            background: url('iloma.png') no-repeat;
+            background-size: cover;
+        }
+
+        form {
+            background: url('iloma.png') no-repeat;
+            object-position: center;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px rgb(69, 128, 32);
+            margin-bottom: 30px;
+            border-top: 3px solid black;
+            border-left: 3px solid black;
+        }
+
+        input {
+            width: 95%;
+            margin-bottom: 5px;
+            padding: 6px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 4px lightgreen;
+            outline-color: rgb(42, 232, 86);
+        }
+
+        button {
+            background-color: rgb(77, 180, 96);
+            border-radius: 5px;
+            align-items: center;
+            padding: 6px 15px;
+            vertical-align: middle;
+            margin-top: 20px;
+            border: none;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #007535;
+            cursor: pointer;
+        }
+        h2{
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transform: perspective(300px) rotateX(deg);
+            background-color: #8de66c;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <h2>SUBMITION FORM</h2>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="first" name="firstName" placeholder="First Name" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="last" name="lastName" placeholder="Last Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="emailid" placeholder="Enter Your Email-ID" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="Please enter mobile number" required>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+        <button type="button" onclick="resetForm()">reset</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function submitForm() {
+            const firstName = document.getElementById('first').value;
+            const lastName = document.getElementById('last').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const resultDiv = document.getElementById('result');
+                                                                              // `` templates literals
+            resultDiv.innerHTML = `<p>First Name: ${firstName}</p>
+                                   <p>Last Name: ${lastName}</p>
+                                   <p>Email: ${email}</p>
+                                   <p>Mobile Number: ${mobile}</p>`;
+        }
+
+        function resetForm(){
+            document.getElementById('form').reset();
+            document.getElementById('result').innerHTML='';
+        }
+    </script>
+</body>
+</html>
